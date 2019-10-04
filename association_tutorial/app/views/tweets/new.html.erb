@@ -4,7 +4,9 @@
 <%= form_for @tweet do |f| %>
     <p>
         <%= f.label :body,"ツイート"%>
-        <%= f.text_field :body %>        
+        <%= f.text_field :body %>
+        <%= f.label :image,"画像" %>
+        <%= f.file_field :image, class: "image" %>        
     </p>
     <%= f.submit %>
 <% end %>

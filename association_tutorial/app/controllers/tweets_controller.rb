@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
   end
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order(id: "DESC")
   end
 
   def show
@@ -27,7 +27,7 @@ class TweetsController < ApplicationController
   private
     def tweet_params
         # tweetモデルのカラムのみを許可
-        params.require(:tweet).permit(:body)
+        params.require(:tweet).permit(:body, :image)
     end
 
 end
